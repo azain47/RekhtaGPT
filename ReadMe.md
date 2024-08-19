@@ -87,7 +87,7 @@ Since the datasets used today are mostly in English, the tokenizers are not able
 - **Normalization:** RMSNorm applied to stabilize training
 
 ## Inferencing
-
+Download the model from 'Releases' and move it to the same folder.
 Run the ```generate.py``` file and tweak the inference settings, such as temperature, top-p threshold.
 Currently Top-P and Top-K are supported, with Beam Search WIP.
 
