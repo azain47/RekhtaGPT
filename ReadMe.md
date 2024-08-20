@@ -91,9 +91,10 @@ Download the model from 'Releases' and move it to the same folder.
 Run the ```generate.py``` file and tweak the inference settings, such as temperature, top-p threshold.
 Currently Top-P and Top-K are supported, with Beam Search WIP.
 
-
 ## TO-DO
 The next step is to use a more general and much larger dataset so this model can truly be used for general urdu language understanding.
 
 ## Contributing
 I truly welcome any contribution from the community to improve this model. It could be dataset contributions, model changes, or inferencing strategies.  
+
+>*PS: I am an Undergrad, currently looking for intern/ft opportunities in AI research or GenAI Domain. Feel free to reach out to me via my email: azaink47@gmail.com*
