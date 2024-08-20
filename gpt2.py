@@ -173,8 +173,11 @@ class GPT2(nn.Module):
         self.transformer_ln_f = RMSNorm(config.n_embed)
 
         self.lm_head = nn.Linear(config.n_embed, config.vocab_size, bias=False)
+        
         # weight sharing scheme
         # self.transformer.wte.weight = self.lm_head.weight
+        # worse performance, hence removed
+
         # custom weight init
         self.apply(self._init_weights)
 
@@ -218,48 +221,3 @@ class GPT2(nn.Module):
             return logits, loss
 
         return logits
-
-
-# # Device setting
-# device = 'cpu'
-# if torch.cuda.is_available():
-#     device = "cuda"
-# print(f'Using device: {device}')
-
-# # Model Init 
-# model = GPT(GPTConfig(vocab_size=50304))
-# # doesnt work on windows :(
-# # model = torch.compile(model)
-# model.to(device)
-
-
-# # Training
-
-# # import sys; sys.exit()
-# tokens = enc.encode('Hello how are you!')
-# tokens = torch.tensor(tokens, dtype=torch.long)
-# tokens = tokens.unsqueeze(0)
-# x = tokens.to(device)
-
-# max_length = 100
-
-# while x.size(1) < max_length:
-#     with torch.no_grad():
-#         logits = model(x)
-
-#         logits = logits[:,-1,:]
-
-#         probs = F.softmax(logits, dim=-1)
-        
-#         topk_probs, topk_indices = torch.topk(probs,50)
-
-#         ix = torch.multinomial(topk_probs, 1)
-
-#         xcol = torch.gather(topk_indices, -1, ix)
-
-#         x = torch.cat((x,xcol), dim=1)
-
-# tokens = x[0].tolist()
-
-# decoded = enc.decode(tokens)
-# print(f'>:{decoded}')
