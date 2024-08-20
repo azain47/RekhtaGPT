@@ -67,7 +67,7 @@ RekhtaGPT was trained on a corpus of 3800+ ghazals from various poets totalling 
 
 The training details are as follows:
 - **Gradient Accumulation Steps:** 16
-- **Learning Rate:** Total Steps 500. Warmup to *7e-4* for 20 steps, then cosine decay to 7e-5 for next 180 steps.
+- **Learning Rate:** Total Steps 500. Warmup to *7e-4* for 20 steps, then cosine decay to 7e-5 for next 480 steps.
 - **Gradient Clipping:** The gradient norm has been clipped to 1.0 . 
 
 ## Custom Tokenizer
